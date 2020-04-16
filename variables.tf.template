@@ -1,0 +1,94 @@
+variable "aws_access_key_id" {
+  description = "AWS access key"
+}
+
+variable "aws_secret_access_key" {
+  description = "AWS secret access key"
+}
+
+variable "aws_region" {
+  description = "The AWS region to create things in."
+  default     = "<Your AWS Region"
+}
+
+variable "az_count" {
+  description = "Number of AZs to cover in a given AWS region"
+  default     = "<Number>"
+}
+
+variable "alb_sg" {
+  description = "The ALB Main Security Group"
+  default     = "<Main Securty Group Name>"
+}
+
+variable "alb_sg_app" {
+  description = "The Application ALB Security Group"
+  default     = "<Application Securty Group Name>"
+}
+
+variable "alb_tg_app" {
+  description = "The ALB Application Target Group"
+  default     = "<Application Target Group Name>"
+}
+
+variable "alb_tg" {
+  description = "The ALB Main Target Group"
+  default     = "<Main Target Group Name>"
+}
+
+variable "ecs_cluster" {
+  description = "The Name of the ECS Cluster"
+  default     = "<Cluster name>"
+}
+
+variable "ecs_service" {
+  description = "The Name of the ECS Service"
+  default     = "<Service name>"
+}
+
+variable "availability_zones" {
+  type = "list"
+}
+
+variable "main_vpc" {}
+variable "main_network_cidr" {}
+variable "region" {}
+
+variable "app" {
+  default = "<Application Name>"
+}
+
+variable "container_name" {
+  description = "The name of the container to be created in ECR"
+  default     = "<Container Name>"
+}
+
+variable "app_port" {
+  description = "Port exposed by the docker image to redirect traffic to"
+  default     = <Application Port>
+}
+
+variable "app_image" {
+  description = "Docker image to run in the ECS cluster"
+  default     = "<Container Name>:latest"
+}
+
+variable "app_image_path" {
+  description = "Docker path of image to run in the ECS cluster"
+  default     = "<AWS Account Number>.dkr.ecr.<AWS Region>.amazonaws.com"
+}
+
+variable "app_count" {
+  description = "Number of docker containers to run"
+  default     = <Number>
+}
+
+variable "fargate_cpu" {
+  description = "Fargate instance CPU units to provision (1 vCPU = 1024 CPU units)"
+  default     = "<Number>"
+}
+
+variable "fargate_memory" {
+  description = "Fargate instance memory to provision (in MiB)"
+  default     = "<Number>"
+}
